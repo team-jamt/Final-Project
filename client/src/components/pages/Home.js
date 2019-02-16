@@ -1,14 +1,16 @@
 import React from "react";
+import "../../styles/Home.css"
 
 function Home() {
     return (
-        <div>
-            <h1>Home Page</h1>
-            <h2>This will explain what the app does.</h2>
-            <div>
-                <p>
-                    This div will have things to do in it.
-                </p>
+        <div className="home-div">
+            <h1>Home</h1>
+            <h4>Rent, buy, and sell items to others in your neighborhood.</h4>
+            <div className="home-buttons">
+                <button type="button" class="home-button" id="button1">My Items for Rent</button>
+                <button type="button" class="home-button" id="button2">My Items for Sale</button>
+                <button type="button" class="home-button" id="button3">Messages</button>
+                <button type="button" class="home-button" id="button4">My Requests</button>
             </div>
         </div>
     );

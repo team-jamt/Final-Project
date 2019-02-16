@@ -1,0 +1,56 @@
+h1 {
+    margin-left: 100px;
+    font-family: 'Abril Fatface', cursive;
+    color: #F75133;
+}
+
+h4 {
+    margin-left: 100px;
+    color: #66483F;
+}
+
+.home-div {
+    margin-top: 30px;
+}
+
+.home-buttons {
+    width: 85%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.home-button {
+    height: 225px;
+    width: 45%;
+    margin: 20px;
+    border-radius: 125px;
+    box-shadow:0 0 8px #605856;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 40px;
+    color: white;
+}
+
+.home-button:hover {
+    cursor: pointer;
+    transform: scale(1.05)
+}
+
+#button1 {
+    border-color: #FBAF37;
+    background-color: #FBAF37;
+}
+
+#button2 {
+    border-color: #F75133;
+    background-color: #F75133;
+}
+
+#button3 {
+    border-color: #66483F;
+    background-color: #66483F;
+}
+
+#button4 {
+    border-color: #50A3A4;
+    background-color: #50A3A4;
+}
