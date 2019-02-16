@@ -10,8 +10,6 @@ const MONGODB_URI =
 const db = require("./models");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -55,6 +53,9 @@ app.post("/rentals/:id", (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

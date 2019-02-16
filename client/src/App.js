@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavTabs from "./components/NavTabs";
-import Home from "./components/pages/Home";
-import Rent from "./components/pages/Rent";
-import Buy from "./components/pages/Buy";
-import Post from "./components/pages/Post";
-import Request from "./components/pages/Request";
+import NavTabs from "./pages/NavTabs";
+import Home from "./pages/Home";
+import Rent from "./pages/Rent";
+import Buy from "./pages/Buy";
+import Post from "./pages/Post";
+import Request from "./pages/Request";
 
 // class App extends Component {
 //   render() {
