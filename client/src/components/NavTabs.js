@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/NavTabs.css"
 
 function NavTabs() {
     return (
         <ul className="nav nav-tabs">
-            <li className="nav-item">
+            <li className="nav-item" id="home">
                 <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
                     Home
                 </Link>
