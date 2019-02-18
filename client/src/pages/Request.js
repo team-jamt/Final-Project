@@ -92,7 +92,7 @@ class Requests extends Component {
               </FormBtn>
             </form>
           </Col>
-          {/* <Col size="md-6 sm-12">
+          <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>My Requests</h1>
             </Jumbotron>
@@ -117,7 +117,7 @@ class Requests extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
-          </Col> */}
+          </Col>
         </Row>
       </Container>
     );

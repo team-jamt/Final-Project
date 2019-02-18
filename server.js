@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const routes = require("./routes");
 //tom stuff
 const mongoose = require("mongoose");
 // const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/requests";
@@ -16,6 +17,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.use(routes);
 
 // Define API routes here
 // app.get("/rentals", function(req, res) {
@@ -64,9 +67,19 @@ app.get("*", (req, res) => {
 //   }
 // });
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/requests", {
-  useNewUrlParser: true
-});
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/requests",
+  function(err, db) {
+    if (err) {
+      console.log(
+        "Unable to connect to the server. Please start the server. Error:",
+        err
+      );
+    } else {
+      console.log("connected to mongo successfully!");
+    }
+  }
+);
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
