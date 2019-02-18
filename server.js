@@ -5,7 +5,7 @@ const app = express();
 //tom stuff
 const mongoose = require("mongoose");
 const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/rentaldb";
+  process.env.MONGODB_URI || "mongodb://localhost:27017/requests";
 // Require all models
 const db = require("./models");
 // Set mongoose to leverage built in JavaScript ES6 Promises
@@ -20,34 +20,34 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.get("/rentals", function(req, res) {
-  // Grab every document in the Articles collection
-  db.Rental.find({})
-    .then(function(dbRental) {
-      // If we were able to successfully find Articles, send them back to the client
-      res.json(dbRental);
-    })
-    .catch(function(err) {
-      // If an error occurred, send it to the client
-      res.json(err);
-    });
-});
+// app.get("/rentals", function(req, res) {
+//   // Grab every document in the Articles collection
+//   db.Rental.find({})
+//     .then(function(dbRental) {
+//       // If we were able to successfully find Articles, send them back to the client
+//       res.json(dbRental);
+//     })
+//     .catch(function(err) {
+//       // If an error occurred, send it to the client
+//       res.json(err);
+//     });
+// });
 
-// Define API routes here
-app.post("/rentals/:id", (req, res) => {
-  db.Rental.create(req.body).then(function(rental) {
-    console.log("rental:", rental);
-    console.log("req.params", req.params);
-    return res
-      .json(rental)
+// // Define API routes here
+// app.post("/rentals/:id", (req, res) => {
+//   db.Rental.create(req.body).then(function(rental) {
+//     console.log("rental:", rental);
+//     console.log("req.params", req.params);
+//     return res
+//       .json(rental)
 
-      .catch(function(err) {
-        console.log("in .catch");
-        // If an error occurs, send it back to the client
-        res.json(err);
-      });
-  });
-});
+//       .catch(function(err) {
+//         console.log("in .catch");
+//         // If an error occurs, send it back to the client
+//         res.json(err);
+//       });
+//   });
+// });
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
@@ -55,7 +55,7 @@ app.get("*", (req, res) => {
 });
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+mongoose.connect("mongodb://localhost:27017/requests");
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
