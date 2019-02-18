@@ -1,0 +1,20 @@
+ul {
+    background-color: #FBAF37;
+    font-size: 16px;
+    height: 60px;
+    line-height: 2.5
+}
+
+a {
+    color: #F7f7f7;
+    height: 100%;
+    padding-top: 15px;
+}
+
+a:hover {
+    color: #DC851F;
+}
+
+.nav-link:hover {
+    border: 0px;
+}
