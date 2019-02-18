@@ -42,11 +42,12 @@ class Requests extends Component {
   };
 
   handleFormSubmit = event => {
+    console.log(event);
     event.preventDefault();
-    if (this.state.item && this.state.user) {
+    if (this.state.item && this.state.user && this.state.comments) {
       API.saveRequest({
         user: this.state.user,
-        author: this.state.item,
+        item: this.state.item,
         comments: this.state.comments
       })
         .then(res => this.loadRequests())
@@ -82,7 +83,9 @@ class Requests extends Component {
                 placeholder="Comments (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.item && this.state.user)}
+                disabled={
+                  !(this.state.item && this.state.user && this.state.comments)
+                }
                 onClick={this.handleFormSubmit}
               >
                 Submit New Request

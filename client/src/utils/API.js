@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // Gets all books
   getRequests: function() {
-    return axios.get("/api/Requests");
+    return axios.get("/api/requests");
   },
   // Gets the book with the given id
   getRequest: function(id) {
@@ -15,6 +15,7 @@ export default {
   },
   // Saves a book to the database
   saveRequest: function(requestData) {
+    console.log("this the data", requestData);
     return axios.post("/api/requests", requestData);
   }
 };

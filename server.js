@@ -55,7 +55,16 @@ app.get("*", (req, res) => {
 });
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost:27017/requests");
+mongoose.connect(MONGODB_URI, function(err, db) {
+  if (err) {
+    console.log(
+      "Unable to connect to the server. Please start the server. Error:",
+      err
+    );
+  } else {
+    console.log("Connected to Server successfully!");
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
