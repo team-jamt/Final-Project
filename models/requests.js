@@ -15,7 +15,7 @@ var requestSchema = new Schema({
     type: String,
     required: true
   },
-  comment: {
+  comments: {
     type: String,
     required: true
   },

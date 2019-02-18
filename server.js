@@ -4,10 +4,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 //tom stuff
 const mongoose = require("mongoose");
-const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/requests";
+// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/requests";
 // Require all models
-const db = require("./models");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 
@@ -54,16 +52,20 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, function(err, db) {
-  if (err) {
-    console.log(
-      "Unable to connect to the server. Please start the server. Error:",
-      err
-    );
-  } else {
-    console.log("Connected to Server successfully!");
-  }
+// mongoose.Promise = Promise;
+// mongoose.connect(MONGODB_URI, function(err, db) {
+//   if (err) {
+//     console.log(
+//       "Unable to connect to the server. Please start the server. Error:",
+//       err
+//     );
+//   } else {
+//     console.log("Connected to Server successfully!");
+//   }
+// });
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/requests", {
+  useNewUrlParser: true
 });
 
 app.listen(PORT, () => {
