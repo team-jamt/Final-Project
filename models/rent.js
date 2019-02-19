@@ -6,30 +6,29 @@ var Schema = mongoose.Schema;
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
 var rentSchema = new Schema({
-    // `title` is required and of type String
+  // `title` is required and of type String
 
-    item: {
-        type: String,
-        required: true
-    },
-    category: {
-        type: String,
-        required: true
+  item: {
+    type: String,
+    required: true
+  },
+  category: {
+    type: String,
+    required: true
+  },
+  purchase: {
+    Type: Boolean
+    // required: true
+  },
 
-    },
-    purchase: {
-        Boolean: False,
-        required: true
-    },
-
-    comments: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: Date,
-        default: Date.now
-    }
+  comments: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 // This creates our model from the above schema, using mongoose's model method
