@@ -7,6 +7,7 @@ import Rent from "./components/pages/Rent";
 import Buy from "./components/pages/Buy";
 import Post from "./components/pages/Post";
 import Request from "./components/pages/Request";
+import Signup from "./components/sign-up";
 
 // class App extends Component {
 //   render() {
@@ -24,6 +25,7 @@ import Request from "./components/pages/Request";
 //   }
 // }
 
+
 function App() {
   return (
     <Router>
@@ -38,4 +40,6 @@ function App() {
     </Router>
   );
 }
+
+
 export default App;

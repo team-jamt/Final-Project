@@ -1,169 +1,137 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-import '../styles/sign-up.css'
+import React, { Component } from "react";
+import {
+    HelpBlock,
+    FormGroup,
+    FormControl,
+    ControlLabel
+} from "react-bootstrap";
+import LoaderButton from "../components/LoaderButton";
+import "../styles/sign-up.css";
 
+export default class Signup extends Component {
+    constructor(props) {
+        super(props);
 
-class Signup extends Component {
-    constructor() {
-        super()
         this.state = {
-            firstname: '',
-            lastname: '',
-            email: '',
-            zipcode: '',
-            username: '',
-            password: '',
-            confirmPassword: '',
-
-        }
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+            isLoading: false,
+            email: "",
+            password: "",
+            confirmPassword: "",
+            confirmationCode: "",
+            newUser: null
+        };
     }
-    handleChange(event) {
+
+    validateForm() {
+        return (
+            this.state.email.length > 0 &&
+            this.state.password.length > 0 &&
+            this.state.password === this.state.confirmPassword
+        );
+    }
+
+    validateConfirmationForm() {
+        return this.state.confirmationCode.length > 0;
+    }
+
+    handleChange = event => {
         this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-    handleSubmit(event) {
-        console.log('sign-up handleSubmit, username: ')
-        console.log(this.state.username)
-        event.preventDefault()
-
-        //request to server to add a new username/password
-        axios.post('/user/', {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            email: this.state.email,
-            zipcode: this.state.zipcode,
-            username: this.state.username,
-            password: this.state.password
-        })
-            .then(response => {
-                console.log(response)
-                if (!response.data.errmsg) {
-                    console.log('successful signup')
-                    this.setState({ //redirect to login page
-                        redirectTo: '/login'
-                    })
-                } else {
-                    console.log('username already taken')
-                }
-            }).catch(error => {
-                console.log('signup error: ')
-                console.log(error)
-
-            })
+            [event.target.id]: event.target.value
+        });
     }
 
+    handleSubmit = async event => {
+        event.preventDefault();
+
+        this.setState({ isLoading: true });
+
+        this.setState({ newUser: "test" });
+
+        this.setState({ isLoading: false });
+    }
+
+    handleConfirmationSubmit = async event => {
+        event.preventDefault();
+
+        this.setState({ isLoading: true });
+    }
+
+    renderConfirmationForm() {
+        return (
+            <form onSubmit={this.handleConfirmationSubmit}>
+                <FormGroup controlId="confirmationCode" bsSize="large">
+                    <ControlLabel>Confirmation Code</ControlLabel>
+                    <FormControl
+                        autoFocus
+                        type="tel"
+                        value={this.state.confirmationCode}
+                        onChange={this.handleChange}
+                    />
+                    <HelpBlock>Please check your email for the code.</HelpBlock>
+                </FormGroup>
+                <LoaderButton
+                    block
+                    bsSize="large"
+                    disabled={!this.validateConfirmationForm()}
+                    type="submit"
+                    isLoading={this.state.isLoading}
+                    text="Verify"
+                    loadingText="Verifying…"
+                />
+            </form>
+        );
+    }
+
+    renderForm() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+                <FormGroup controlId="email" bsSize="large">
+                    <ControlLabel>Email</ControlLabel>
+                    <FormControl
+                        autoFocus
+                        type="email"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                    />
+                </FormGroup>
+                <FormGroup controlId="password" bsSize="large">
+                    <ControlLabel>Password</ControlLabel>
+                    <FormControl
+                        value={this.state.password}
+                        onChange={this.handleChange}
+                        type="password"
+                    />
+                </FormGroup>
+                <FormGroup controlId="confirmPassword" bsSize="large">
+                    <ControlLabel>Confirm Password</ControlLabel>
+                    <FormControl
+                        value={this.state.confirmPassword}
+                        onChange={this.handleChange}
+                        type="password"
+                    />
+                </FormGroup>
+                <LoaderButton
+                    block
+                    bsSize="large"
+                    disabled={!this.validateForm()}
+                    type="submit"
+                    isLoading={this.state.isLoading}
+                    text="Signup"
+                    loadingText="Signing up…"
+                />
+            </form>
+        );
+    }
 
     render() {
         return (
-            <div className="SignupForm">
-                <h4 className="signup">Sign up</h4>
-                <form className="form-horizontal">
-                    <div className="form-group">
-                        <div className="col-1 col-ml-auto">
-                            <label className="form-label" htmlFor="firstname">First Name</label>
-                        </div>
-                        <div className="col-3 col-mr-auto">
-                            <input className="form-input"
-                                type="text"
-                                id="firstname"
-                                name="firstname"
-                                placeholder="First Name"
-                                value={this.state.firstname}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="col-1 col-ml-auto">
-                            <label className="form-label" htmlFor="lastname">Last Name</label>
-                        </div>
-                        <div className="col-3 col-mr-auto">
-                            <input className="form-input"
-                                type="text"
-                                id="lastname"
-                                name="lastname"
-                                placeholder="Last Name"
-                                value={this.state.lastname}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="col-1 col-ml-auto">
-                            <label className="form-label" htmlFor="lastname">E-mail</label>
-                        </div>
-                        <div className="col-3 col-mr-auto">
-                            <input className="form-input"
-                                type="text"
-                                id="email"
-                                name="email"
-                                placeholder="email"
-                                value={this.state.email}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="col-1 col-ml-auto">
-                            <label className="form-label" htmlFor="username">Username</label>
-                        </div>
-                        <div className="col-3 col-mr-auto">
-                            <input className="form-input"
-                                type="text"
-                                id="username"
-                                name="username"
-                                placeholder="Username"
-                                value={this.state.username}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="col-1 col-ml-auto">
-                            <label className="form-label" htmlFor="password">Password: </label>
-                        </div>
-                        <div className="col-3 col-mr-auto">
-                            <input className="form-input"
-                                placeholder="password"
-                                type="password"
-                                name="password"
-                                value={this.state.password}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="col-1 col-ml-auto">
-                            <label className="form-label" htmlFor="email">Zip Code</label>
-                        </div>
-                        <div className="col-3 col-mr-auto">
-                            <input className="form-input"
-                                type="text"
-                                id="zipcode"
-                                name="zipcode"
-                                placeholder="zipcode"
-                                value={this.state.zipcode}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div className="form-group ">
-                        <div className="col-7"></div>
-                        <button
-                            className="btn btn-primary col-1 col-mr-auto"
-                            onClick={this.handleSubmit}
-                            type="submit"
-                        >Sign up</button>
-                    </div>
-                </form>
+            <div className="Signup">
+                {this.state.newUser === null
+                    ? this.renderForm()
+                    : this.renderConfirmationForm()}
             </div>
-
-        )
+        );
     }
 }
 
 export default Signup;
-
