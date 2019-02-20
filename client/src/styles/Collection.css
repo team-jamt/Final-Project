@@ -1,0 +1,46 @@
+.collection-div {
+    margin-top: 30px;
+}
+
+.collection-items-div {
+    margin: 30px auto 30px auto;
+    width: 80%;
+    box-shadow:0 0 8px #605856;
+    font-family: 'Abril Fatface', cursive;
+    padding-bottom: 10px;
+}
+
+.categories {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    line-height: 3.0;
+    color: #66483F;
+    background-color: white;
+    font-family: 'Questrial', sans-serif;
+}
+
+.card {
+    width: 25%;
+    margin: 0 2% 2% 2%;
+    font-family: 'Questrial', sans-serif;
+}
+
+.card:hover {
+    border-color: #FBAF37;
+}
+
+.card-title {
+    color: #F75133;
+}
+
+.card-text {
+    color: #66483F;
+}
+
+.btn {
+    background-color: #50A3A4;
+    border-color: #50A3A4;
+}

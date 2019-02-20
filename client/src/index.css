@@ -3,3 +3,25 @@ body {
   padding: 0;
   font-family: 'Questrial', sans-serif;
 }
+
+h1 {
+  margin-left: 100px;
+  font-family: 'Abril Fatface', cursive;
+  color: #F75133;
+}
+
+h2 {
+  color: #F7F7F7;
+  background-color: #FBAF37;
+  font-family: 'Abril Fatface', cursive;
+  padding: 10px 0 10px 20px;
+}
+
+h4 {
+  margin-left: 100px;
+  color: #66483F;
+}
+
+h5 {
+  font-family: 'Questrial', sans-serif;
+}
