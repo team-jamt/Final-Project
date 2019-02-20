@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Collection.css";
+import "../styles/Collection.css";
 
 function Buy() {
 
