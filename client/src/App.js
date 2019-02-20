@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavTabs from "./components/NavTabs";
+
+import NavTabs from "./pages/NavTabs";
+
 import Home from "./pages/Home";
 import Rent from "./pages/Rent";
 import Buy from "./pages/Buy";

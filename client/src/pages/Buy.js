@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../styles/Collection.css";
 
 function Buy() {
@@ -30,6 +31,7 @@ function Buy() {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 }

@@ -30,6 +30,7 @@ function Rent() {
                 </div>
 
             </div>
+
         </div>
     );
 }
