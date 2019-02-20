@@ -1,6 +1,55 @@
+
+import React, { Component } from "react";
 import React from "react";
 import "../styles/Post.css";
+import API from "../utils/API";
 
+class Items extends Component {
+    state = {
+      requests: [],
+      user: "",
+      item: "",
+      comments: ""
+    };
+  
+    componentDidMount() {
+      this.loadItems();
+    }
+  
+    loadItems = () => {
+      API.getItems()
+        .then(res =>
+          this.setState({ requests: res.data, user: "", item: "", comments: "" })
+        )
+        .catch(err => console.log(err));
+    };
+  
+    deleteItem = id => {
+      API.deleteItem(id)
+        .then(res => this.loadItems())
+        .catch(err => console.log(err));
+    };
+  
+    handleInputChange = event => {
+      const { name, value } = event.target;
+      this.setState({
+        [name]: value
+      });
+    };
+  
+    handleFormSubmit = event => {
+      console.log(event);
+      event.preventDefault();
+      if (this.state.item && this.state.user && this.state.comments) {
+        API.saveRequest({
+          user: this.state.user,
+          item: this.state.item,
+          comments: this.state.comments
+        })
+          .then(res => this.loadItems())
+          .catch(err => console.log(err));
+      }
+    };
 
 function Post() {
     return (
