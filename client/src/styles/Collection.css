@@ -39,11 +39,11 @@
 
 .card {
     border-radius: 2px;
-    height: 470px;
+    height: 450px;
     margin: 5px;
     margin-bottom: 2%;
     position: relative;
-    width: 300px;
+    width: 270px;
     text-align: left;
     font-family: 'Questrial', sans-serif;
 }
