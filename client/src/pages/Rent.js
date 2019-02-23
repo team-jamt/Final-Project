@@ -1,13 +1,26 @@
 import React, { Component } from "react";
 import ItemCard from "../components/ItemCard";
 import Wrapper from "../components/Wrapper";
-import rentalItems from "../components/rentalItems.json";
+// import rentalItems from "../components/rentalItems.json";
+import API from "../utils/API";
 import "../styles/Collection.css"
 
 class Rent extends Component {
     state = {
-        rentalItems
+        rentalItems: []
     };
+
+    componentDidMount() {
+        this.loadRentalItems();
+    }
+
+    loadRentalItems = () => {
+        API.getRentalItems()
+            .then(res =>
+                this.setState({ rentalItems: res.data })
+            )
+            .catch(err => console.log(err));
+    }
 
     render() {
 

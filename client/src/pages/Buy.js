@@ -1,12 +1,24 @@
 import React, { Component } from "react";
 import ItemCard from "../components/ItemCard";
 import Wrapper from "../components/Wrapper";
-import saleItems from "../components/saleItems.json";
+import API from "../utils/API";
 import "../styles/Collection.css";
 
 class Buy extends Component {
     state = {
-        saleItems
+        saleItems: []
+    }
+
+    componentDidMount() {
+        this.loadSaleItems();
+    }
+
+    loadSaleItems = () => {
+        API.getSaleItems()
+            .then(res =>
+                this.setState({ saleItems: res.data })
+            )
+            .catch(err => console.log(err));
     }
 
     render() {
@@ -16,7 +28,7 @@ class Buy extends Component {
                     <h1>Buy an Item</h1>
                     <h4>
                         Browse our collection of items for sale in your area.
-            </h4>
+                    </h4>
                     <div className="collection-items-div">
                         <h2>Items for Sale</h2>
                         <ul class="categories">
