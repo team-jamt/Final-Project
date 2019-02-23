@@ -25,7 +25,7 @@ class Post extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if (!this.state.name || !this.state.price || !this.state.image || !this.state.description || !this.state.type || !this.state.category) {
+        if (!this.state.name || !this.state.price || !this.state.description || !this.state.type || !this.state.category) {
             alert("Please fill out all the fields.");
         };
 
@@ -117,7 +117,7 @@ class Post extends Component {
 
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            Link to Image
+                                            Link to Image (not required)
                                             <Input
                                                 value={this.state.image}
                                                 name="image"
@@ -136,7 +136,7 @@ class Post extends Component {
                                                 name="description"
                                                 onChange={this.handleInputChange}
                                                 type="text"
-                                                placeholder="Tell us about the item here"
+                                                placeholder="If requesting an item, please write here if you are looking to rent or buy."
                                             />
                                         </div>
                                     </div>
