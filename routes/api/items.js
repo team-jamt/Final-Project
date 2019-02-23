@@ -1,17 +1,12 @@
 const router = require("express").Router();
 const requestsController = require("../../controllers/requestsController");
 
-// Matches with "/api/requests"
-router
-  .route("/")
-  .get(requestsController.findAll)
-  .post(requestsController.create);
+router.route("/").post(requestsController.create);
 
-// Matches with "/api/requests/:id"
-router
-  .route("/:id")
-  .get(requestsController.findById)
-  .put(requestsController.update)
-  .delete(requestsController.remove);
+router.route("/rentalitems").get(requestsController.findRentalItems);
+
+router.route("/saleitems").get(requestsController.findSaleItems);
+
+router.route("/requestitems").get(requestsController.findRequestItems);
 
 module.exports = router;
