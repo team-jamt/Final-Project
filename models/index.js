@@ -1,5 +1,6 @@
 module.exports = {
-  Request: require("./requests")
+  Request: require("./requests"),
+  Item: require("./item")
 };
 
 // module.exports = {
