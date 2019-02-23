@@ -3,13 +3,23 @@ import React, { Component } from "react";
 import React from "react";
 import "../styles/Post.css";
 import API from "../utils/API";
+import DeleteBtn from "../components/DeleteBtn";
+import Jumbotron from "../components/Jumbotron";
+import { Link } from "react-router-dom";
+import { Col, Row, Container } from "../components/Grid";
+import { List, ListItem } from "../components/List";
+import { Input, TextArea, FormBtn } from "../components/Form";
+
 
 class Items extends Component {
     state = {
-      requests: [],
-      user: "",
-      item: "",
-      comments: ""
+      items: [],
+      name: "",
+      price: 0,
+      type: "",
+      category: "",
+      hyperlink: "",
+      description: ""
     };
   
     componentDidMount() {
@@ -132,11 +142,14 @@ function Post() {
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <a href="https://www.w3schools.com/tags/att_a_href.asp" class="btn btn-primary" id="post-submit-btn">Post Item</a>
-                                </div>
-                            </div>
+                            <FormBtn
+                disabled={
+                  !(this.state.name && this.state.price && this.state.type && this.state.category)
+                }
+                onClick={this.handleFormSubmit}
+              >
+                Post Item
+              </FormBtn>
 
                         </form>
                     </div>
