@@ -76,15 +76,15 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/login" component={Login}>
+          <Route exact path="/"
             render={() => (this.state.password ?
-              <Redirect to="/" /> :
+              <Redirect to="/home" component={Home} /> :
               <Login />
-            )};
+            )}>
           </Route>
           <NavTabs />
 
-          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
           <Route exact path="/rent" component={Rent} />
           <Route exact path="/buy" component={Buy} />
           <Route exact path="/post" component={Post} />
