@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Redirect } from 'react-router';
 
@@ -75,14 +75,16 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Switch>
-          <Route exact path="/"
+        <Fragment>
+
+          {/* <Switch> */}
+          <NavTabs />
+          {/* <Route exact path="/"
             render={() => (this.state.password ?
               <Redirect to="/home" component={Home} /> :
               <Login />
-            )}>
-          </Route>
-          <NavTabs />
+              )}>
+            </Route> */}
 
           <Route exact path="/home" component={Home} />
           <Route exact path="/rent" component={Rent} />
@@ -111,7 +113,8 @@ class App extends Component {
               />
             )}
           />
-        </Switch>
+          {/* </Switch> */}
+        </Fragment>
       </Router>
 
     );
