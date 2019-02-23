@@ -70,6 +70,15 @@ class Login extends Component {
                     >
                         Login
                 </Button>
+
+                    <Button
+                        block
+                        bsSize="large"
+                        disabled={!this.validateForm()}
+                        type="submit"
+                    >
+                        Sign Up
+                </Button>
                 </form>
             </div>
         );
