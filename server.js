@@ -55,7 +55,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-// mongoose.Promise = Promise;
+
 // mongoose.connect(MONGODB_URI, function(err, db) {
 //   if (err) {
 //     console.log(
@@ -67,19 +67,22 @@ app.get("*", (req, res) => {
 //   }
 // });
 // Connect to the Mongo DB
+
+// mongoose.Promise = Promise;
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/requests",
-  function(err, db) {
+  process.env.MONGODB_URI || "mongodb://localhost/items",
+  function (err, db) {
     if (err) {
       console.log(
         "Unable to connect to the server. Please start the server. Error:",
         err
       );
     } else {
-      console.log("connected to mongo successfully!");
+      console.log("connected to item database successfully!");
     }
   }
-);
+)
+
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

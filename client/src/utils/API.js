@@ -1,21 +1,34 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getRequests: function() {
-    return axios.get("/api/requests");
+  // // Gets all books
+  // getRequests: function () {
+  //   return axios.get("/api/requests");
+  // },
+  // // Gets the book with the given id
+  // getRequest: function (id) {
+  //   return axios.get("/api/requests/" + id);
+  // },
+  // // Deletes the book with the given id
+  // deleteRequest: function (id) {
+  //   return axios.delete("/api/requests/" + id);
+  // },
+  // // Saves a book to the database
+  // saveRequest: function (requestData) {
+  //   console.log("this the data", requestData);
+  //   return axios.post("/api/requests", requestData);
+  // },
+  postItem: function (postData) {
+    console.log("this is it: ", postData)
+    return axios.post("/api/items", postData);
   },
-  // Gets the book with the given id
-  getRequest: function(id) {
-    return axios.get("/api/requests/" + id);
+  getRentalItems: function () {
+    return axios.get("/api/items/rentalitems")
   },
-  // Deletes the book with the given id
-  deleteRequest: function(id) {
-    return axios.delete("/api/requests/" + id);
+  getSaleItems: function () {
+    return axios.get("/api/items/saleitems")
   },
-  // Saves a book to the database
-  saveRequest: function(requestData) {
-    console.log("this the data", requestData);
-    return axios.post("/api/requests", requestData);
+  getRequestItems: function () {
+    return axios.get("/api/items/requestitems")
   }
 };
