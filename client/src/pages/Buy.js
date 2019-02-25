@@ -19,6 +19,10 @@ class Buy extends Component {
       .catch(err => console.log(err));
   };
 
+  buyItems = itemInfo => {
+    API.buyItem(itemInfo);
+  };
+
   render() {
     return (
       <Wrapper>
@@ -46,6 +50,8 @@ class Buy extends Component {
                   name={item.name}
                   image={item.image}
                   description={item.description}
+                  price={item.price}
+                  buyButton={this.buyItem}
                 />
               ))}
             </div>

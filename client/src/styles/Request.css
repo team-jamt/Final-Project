@@ -5,6 +5,54 @@
 .requests-div {
     margin: 30px auto 30px auto;
     width: 66%;
+    height: 100%;
     box-shadow: 0 0 8px #605856;
-    font-family: 'Abril Fatface', cursive;
+}
+
+.request-card {
+    border: 1px solid #CFD2CD;
+    height: 75px;
+    margin: 1% 1%;
+    padding: 1% 1%;
+}
+
+.request-card:hover {
+    border-color: #FBAF37;
+}
+
+.request-title {
+    color: #F75133;
+    font-size: 20px;
+}
+
+.request-description {
+    color: #66483F;
+}
+
+.middle-col {
+    line-height: 20px;
+}
+
+.middle-col-item {
+    color: red;
+    margin-right: 10px;
+}
+
+.request-item-img > img {
+    height: 60%;
+    width: 60%;
+}
+
+.request-btn {
+    color: #f7f7f7;
+    background-color: #50A3A4;
+    border-color: #50A3A4;
+    border-radius: 50px;
+    height: 66%;
+    width: 90%;
+}
+
+.request-link:hover {
+    text-decoration: none;
+    color: #9BC1BC;
 }

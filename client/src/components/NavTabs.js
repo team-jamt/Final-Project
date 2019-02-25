@@ -11,6 +11,11 @@ function NavTabs() {
                 </Link>
             </li>
             <li className="nav-item">
+                <Link to="/post" className={window.location.pathname === "/post" ? "nav-link active" : "nav-link"}>
+                    Post an Item
+                </Link>
+            </li>
+            <li className="nav-item">
                 <Link to="/rent" className={window.location.pathname === "/rent" ? "nav-link active" : "nav-link"}>
                     Rent an Item
                 </Link>
@@ -21,13 +26,8 @@ function NavTabs() {
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to="/post" className={window.location.pathname === "/post" ? "nav-link active" : "nav-link"}>
-                    Post an Item
-                </Link>
-            </li>
-            <li className="nav-item">
                 <Link to="/request" className={window.location.pathname === "/request" ? "nav-link active" : "nav-link"}>
-                    Request an Item
+                    Item Requests
                 </Link>
             </li>
         </ul>

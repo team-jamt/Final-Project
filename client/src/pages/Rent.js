@@ -50,6 +50,7 @@ class Rent extends Component {
                                     name={item.name}
                                     image={item.image}
                                     description={item.description}
+                                    price={item.price}
                                 />
                             ))}
                         </div>

@@ -28,7 +28,6 @@ class Post extends Component {
     if (
       !this.state.name ||
       !this.state.price ||
-      !this.state.image ||
       !this.state.description ||
       !this.state.type ||
       !this.state.category
@@ -122,6 +121,68 @@ class Post extends Component {
 
                   <div class="row">
                     <div class="col-sm-12">
+                      Link to Image (not required)
+                      <Input
+                        value={this.state.image}
+                        name="image"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="https://www.example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      Description
+                      <TextArea
+                        value={this.state.description}
+                        name="description"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="If requesting an item, please write here if you are looking to rent or buy."
+                      />
+                    </div>
+                  </div>
+
+                  <button
+                    id="post-submit-btn"
+                    className="btn"
+                    onClick={this.handleFormSubmit}
+                  >
+                    Post Item
+                  </button>
+                </form>
+              </div>
+
+              <div class="col-sm-6">
+                <img
+                  src="https://i.pinimg.com/originals/c4/c2/65/c4c26502099258f61ee9662ea4cf427b.jpg"
+                  id="map"
+                />
+              </div>
+            </div>
+            {/* <div class="col-sm-4">
+                      Type
+                      <Type
+                        value={this.state.type}
+                        name="type"
+                        onChange={this.handleInputChange}
+                      />
+                    </div>
+
+                    <div class="col-sm-4">
+                      Category
+                      <Category
+                        value={this.state.category}
+                        name="category"
+                        onChange={this.handleInputChange}
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-12">
                       Link to Image
                       <Input
                         value={this.state.image}
@@ -153,16 +214,15 @@ class Post extends Component {
                   >
                     Post Item
                   </button>
-                </form>
-              </div>
+                {/* </form> */}
+            {/* </div>
 
               <div class="col-sm-6">
                 <img
                   src="https://i.pinimg.com/originals/c4/c2/65/c4c26502099258f61ee9662ea4cf427b.jpg"
                   id="map"
                 />
-              </div>
-            </div>
+              </div> */}
           </div>
         </div>
       </Wrapper>
