@@ -35,7 +35,8 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Item.findOneAndUpdate({ _id: req.params.id }, { rented: true })
+    // console.log("update res ", res);
+    db.Item.findOneAndUpdate({ _id: req.params.id }, { $set: { rented: true } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

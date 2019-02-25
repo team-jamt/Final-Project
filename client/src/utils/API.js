@@ -31,7 +31,8 @@ export default {
   getRequestItems: function() {
     return axios.get("/api/items/requestitems");
   },
-  buyItem: function(itemInfo) {
-    return axios.put("/api/items/saleitems/" + itemInfo);
+  buyItem: function(id) {
+    console.log("tom's id: ", id);
+    return axios.put("/api/items/saleitems/" + id);
   }
 };

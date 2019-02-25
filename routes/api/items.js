@@ -9,6 +9,6 @@ router.route("/saleitems").get(requestsController.findSaleItems);
 
 router.route("/requestitems").get(requestsController.findRequestItems);
 
-router.route("/saleitems").put(requestsController.update);
+router.route("/saleitems/:id").put(requestsController.update);
 
 module.exports = router;

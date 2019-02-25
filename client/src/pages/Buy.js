@@ -19,7 +19,8 @@ class Buy extends Component {
       .catch(err => console.log(err));
   };
 
-  buyItems = itemInfo => {
+  buyItem = itemInfo => {
+    console.log("item info: ", itemInfo);
     API.buyItem(itemInfo);
   };
 
@@ -45,7 +46,7 @@ class Buy extends Component {
             <div className="item-card-div">
               {this.state.saleItems.map(item => (
                 <ItemCard
-                  id={item.id}
+                  id={item._id}
                   key={item.id}
                   name={item.name}
                   image={item.image}

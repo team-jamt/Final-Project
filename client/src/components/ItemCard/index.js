@@ -12,8 +12,12 @@ function ItemCard(props) {
         <a href="https://www.apple.com" className="btn">
           More Info
         </a>
-        <a href="https://www.apple.com" className="btn">
-          More Info
+        <a
+          href="/home"
+          className="btn"
+          onClick={() => props.buyButton(props.id)}
+        >
+          Purchase Item
         </a>
       </div>
     </div>
