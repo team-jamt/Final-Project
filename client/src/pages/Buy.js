@@ -5,61 +5,54 @@ import API from "../utils/API";
 import "../styles/Collection.css";
 
 class Buy extends Component {
-    state = {
-        saleItems: []
-    }
+  state = {
+    saleItems: []
+  };
 
-    componentDidMount() {
-        this.loadSaleItems();
-    }
+  componentDidMount() {
+    this.loadSaleItems();
+  }
 
-    loadSaleItems = () => {
-        API.getSaleItems()
-            .then(res =>
-                this.setState({ saleItems: res.data })
-            )
-            .catch(err => console.log(err));
-    }
+  loadSaleItems = () => {
+    API.getSaleItems()
+      .then(res => this.setState({ saleItems: res.data }))
+      .catch(err => console.log(err));
+  };
 
-    render() {
-        return (
-            <Wrapper>
-                <div className="collection-div" >
-                    <h1>Buy an Item</h1>
-                    <h4>
-                        Browse our collection of items for sale in your area.
-                    </h4>
-                    <div className="collection-items-div">
-                        <h2>Items for Sale</h2>
-                        <ul class="categories">
-                            <li>All Items</li>
-                            <li>Cleaning</li>
-                            <li>Entertainment</li>
-                            <li>Fitness</li>
-                            <li>Kitchen</li>
-                            <li>Miscellaneous</li>
-                            <li>Tools</li>
-                            <li>Yard</li>
-                        </ul>
+  render() {
+    return (
+      <Wrapper>
+        <div className="collection-div">
+          <h1>Buy an Item</h1>
+          <h4>Browse our collection of items for sale in your area.</h4>
+          <div className="collection-items-div">
+            <h2>Items for Sale</h2>
+            <ul class="categories">
+              <li>All Items</li>
+              <li>Cleaning</li>
+              <li>Entertainment</li>
+              <li>Fitness</li>
+              <li>Kitchen</li>
+              <li>Miscellaneous</li>
+              <li>Tools</li>
+              <li>Yard</li>
+            </ul>
 
-
-                        <div className="item-card-div">
-                            {this.state.saleItems.map(item => (
-                                <ItemCard
-                                    id={item.id}
-                                    key={item.id}
-                                    name={item.name}
-                                    image={item.image}
-                                    description={item.description}
-                                />
-                            ))}
-                        </div>
-
-                    </div>
-
-                </div>
-            </Wrapper>
-        );
-    }
+            <div className="item-card-div">
+              {this.state.saleItems.map(item => (
+                <ItemCard
+                  id={item.id}
+                  key={item.id}
+                  name={item.name}
+                  image={item.image}
+                  description={item.description}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </Wrapper>
+    );
+  }
 }
 export default Buy;

@@ -11,7 +11,8 @@ class Post extends Component {
     image: "",
     description: "",
     type: "",
-    category: ""
+    category: "",
+    rented: false
   };
 
   handleInputChange = event => {
@@ -41,7 +42,8 @@ class Post extends Component {
       type: this.state.type,
       category: this.state.category,
       image: this.state.image,
-      description: this.state.description
+      description: this.state.description,
+      rented: this.state.rented
     })
       .then(res => console.log("Successfully Captured Item"))
       .catch(err => console.log(err));
