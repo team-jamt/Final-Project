@@ -16,60 +16,60 @@ import { Navbar } from "react-bootstrap";
 
 
 class App extends Component {
-  state = {
-    isLoggedIn: false,
-    user: {
-      email: "",
-      name: ""
-    }
-  };
+  // state = {
+  //   isLoggedIn: false,
+  //   user: {
+  //     email: "",
+  //     name: ""
+  //   }
+  // };
 
-  handleLogin = user => {
-    this.setState({
-      isLoggedIn: true,
-      user
-    });
-    localStorage.setItem("username", user.username);
-  };
+  // handleLogin = user => {
+  //   this.setState({
+  //     isLoggedIn: true,
+  //     user
+  //   });
+  //   localStorage.setItem("username", user.username);
+  // };
 
-  handleSignup = userData => {
-    console.log("uD", userData);
-    this.setState({
-      isLoggedIn: true,
-      user: userData
-    });
-  };
+  // handleSignup = userData => {
+  //   console.log("uD", userData);
+  //   this.setState({
+  //     isLoggedIn: true,
+  //     user: userData
+  //   });
+  // };
 
-  handleLogOut = () => {
-    API.logout()
-      .then(res => {
-        this.setState({
-          isLoggedIn: false,
-          user: {
-            id: "",
-            name: ""
-          }
-        });
-        localStorage.removeItem("username");
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  // handleLogOut = () => {
+  //   API.logout()
+  //     .then(res => {
+  //       this.setState({
+  //         isLoggedIn: false,
+  //         user: {
+  //           id: "",
+  //           name: ""
+  //         }
+  //       });
+  //       localStorage.removeItem("username");
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
 
 
-  componentDidMount() {
-    if (localStorage.getItem("username")) {
-      API.checkLogin(localStorage.getItem("username")).then(res => {
-        if (res.data.status === "loggedIn") {
-          this.setState({
-            isLoggedIn: true,
-            user: res.data.user
-          });
-        }
-      });
-    }
-  }
+  // componentDidMount() {
+  //   if (localStorage.getItem("username")) {
+  //     API.checkLogin(localStorage.getItem("username")).then(res => {
+  //       if (res.data.status === "loggedIn") {
+  //         this.setState({
+  //           isLoggedIn: true,
+  //           user: res.data.user
+  //         });
+  //       }
+  //     });
+  //   }
+  // }
 
 
   render() {
