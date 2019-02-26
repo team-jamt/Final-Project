@@ -3,6 +3,7 @@ import ItemCard from "../components/ItemCard";
 import Wrapper from "../components/Wrapper";
 import API from "../utils/API";
 import "../styles/Collection.css";
+import NavTabs from "../components/NavTabs";
 
 class Buy extends Component {
   state = {

@@ -4,6 +4,7 @@ import Wrapper from "../components/Wrapper";
 // import rentalItems from "../components/rentalItems.json";
 import API from "../utils/API";
 import "../styles/Collection.css";
+import NavTabs from "../components/NavTabs";
 
 class Rent extends Component {
   state = {

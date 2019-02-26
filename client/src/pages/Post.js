@@ -3,6 +3,7 @@ import "../styles/Post.css";
 import { Input, TextArea, Type, Category } from "../components/PostForm";
 import API from "../utils/API";
 import Wrapper from "../components/Wrapper";
+import NavTabs from "../components/NavTabs";
 
 class Post extends Component {
   state = {

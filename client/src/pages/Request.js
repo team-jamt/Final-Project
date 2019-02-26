@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Wrapper from "../components/Wrapper";
 import RequestCard from "../components/RequestCard"
-import { Link } from "react-router-dom";
 import "../styles/Request.css";
+import NavTabs from "../components/NavTabs";
 
 class Requests extends Component {
   state = {
@@ -25,6 +25,7 @@ class Requests extends Component {
   render() {
     return (
       <Wrapper>
+        <NavTabs />
         <div className="requests-page-div">
           <h1>Item Requests</h1>
           <h4>Browse our list of item requests and see if you have something that someone wants.
