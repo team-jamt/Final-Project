@@ -12,8 +12,13 @@ class Post extends Component {
     description: "",
     type: "",
     category: "",
-    rented: false
+    rented: false,
+    owner: "tom"
   };
+
+  componentDidMount() {
+    //go get the username
+  }
 
   handleInputChange = event => {
     let value = event.target.value;
@@ -42,7 +47,8 @@ class Post extends Component {
       category: this.state.category,
       image: this.state.image,
       description: this.state.description,
-      rented: this.state.rented
+      rented: this.state.rented,
+      owner: this.state.owner
     })
       .then(res => console.log("Successfully Captured Item"))
       .catch(err => console.log(err));

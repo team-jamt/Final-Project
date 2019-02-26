@@ -20,7 +20,7 @@ class Buy extends Component {
   };
 
   buyItem = itemInfo => {
-    console.log("item info: ", itemInfo);
+    // console.log("item info: ", itemInfo);
     API.buyItem(itemInfo);
   };
 

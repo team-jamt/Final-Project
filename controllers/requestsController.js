@@ -8,7 +8,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findRentalItems: function(req, res) {
-    db.Item.find({ type: "Rent" })
+    db.Item.find({ type: "Rent", rented: false })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

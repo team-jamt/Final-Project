@@ -32,7 +32,11 @@ export default {
     return axios.get("/api/items/requestitems");
   },
   buyItem: function(id) {
-    console.log("tom's id: ", id);
+    // console.log("tom's id: ", id);
     return axios.put("/api/items/saleitems/" + id);
+  },
+  rentItem: function(id) {
+    console.log("tom's id: ", id);
+    return axios.put("/api/items/rentalitems/" + id);
   }
 };

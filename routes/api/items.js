@@ -11,4 +11,6 @@ router.route("/requestitems").get(requestsController.findRequestItems);
 
 router.route("/saleitems/:id").put(requestsController.update);
 
+router.route("/rentalitems/:id").put(requestsController.update);
+
 module.exports = router;

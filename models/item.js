@@ -34,6 +34,10 @@ const itemSchema = new Schema({
     type: Boolean,
     required: true,
     default: false
+  },
+  owner: {
+    type: String,
+    required: true
   }
 });
 
