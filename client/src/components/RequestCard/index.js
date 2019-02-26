@@ -3,7 +3,7 @@ import React from "react";
 function RequestCard(props) {
     return (
         <div className="request-card">
-            <div class="row">
+            <div className="row">
                 <div className="col-sm-5">
                     <h5 className="request-title">{props.name}</h5>
                     <p className="request-description">{props.description}</p>
@@ -11,12 +11,12 @@ function RequestCard(props) {
 
                 <div className="col-sm-4">
                     <p className="middle-col">
-                        <span class="middle-col-item">Category:</span>
+                        <span className="middle-col-item">Category:</span>
                         <span>{props.category}</span>
                     </p>
 
                     <p className="middle-col">
-                        <span class="middle-col-item">Will Pay:</span>
+                        <span className="middle-col-item">Will Pay:</span>
                         <span>{props.price}</span>
                     </p>
 
