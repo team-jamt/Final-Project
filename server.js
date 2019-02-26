@@ -20,35 +20,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-// Define API routes here
-// app.get("/rentals", function(req, res) {
-//   // Grab every document in the Articles collection
-//   db.Rental.find({})
-//     .then(function(dbRental) {
-//       // If we were able to successfully find Articles, send them back to the client
-//       res.json(dbRental);
-//     })
-//     .catch(function(err) {
-//       // If an error occurred, send it to the client
-//       res.json(err);
-//     });
-// });
-
-// // Define API routes here
-// app.post("/rentals/:id", (req, res) => {
-//   db.Rental.create(req.body).then(function(rental) {
-//     console.log("rental:", rental);
-//     console.log("req.params", req.params);
-//     return res
-//       .json(rental)
-
-//       .catch(function(err) {
-//         console.log("in .catch");
-//         // If an error occurs, send it back to the client
-//         res.json(err);
-//       });
-//   });
-// });
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
@@ -56,19 +27,6 @@ app.get("*", (req, res) => {
 });
 
 
-// mongoose.connect(MONGODB_URI, function(err, db) {
-//   if (err) {
-//     console.log(
-//       "Unable to connect to the server. Please start the server. Error:",
-//       err
-//     );
-//   } else {
-//     console.log("Connected to Server successfully!");
-//   }
-// });
-// Connect to the Mongo DB
-
-// mongoose.Promise = Promise;
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/items",
   function (err, db) {

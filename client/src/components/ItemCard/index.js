@@ -3,7 +3,7 @@ import React from "react";
 function ItemCard(props) {
     return (
         <div className="card">
-            <div class="img-container">
+            <div className="img-container">
                 <img alt={props.name} src={props.image} />
             </div>
 

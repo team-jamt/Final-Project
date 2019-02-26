@@ -6,7 +6,7 @@ function NavTabs() {
     return (
         <ul className="nav nav-tabs">
             <li className="nav-item" id="home">
-                <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
+                <Link to="/home" className={window.location.pathname === "/home" ? "nav-link active" : "nav-link"}>
                     Home
                 </Link>
             </li>
@@ -31,6 +31,8 @@ function NavTabs() {
                 </Link>
             </li>
         </ul>
+
+
     )
 }
 

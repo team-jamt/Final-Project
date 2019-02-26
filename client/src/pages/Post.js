@@ -3,6 +3,7 @@ import "../styles/Post.css";
 import { Input, TextArea, Type, Category } from "../components/PostForm";
 import API from "../utils/API";
 import Wrapper from "../components/Wrapper";
+import NavTabs from "../components/NavTabs";
 
 
 class Post extends Component {
@@ -53,24 +54,25 @@ class Post extends Component {
     render() {
         return (
             <Wrapper>
-                <div class="post-item-div">
+                <NavTabs />
+                <div className="post-item-div">
                     <h1>Post an Item</h1>
                     <h4>
                         Post an item to rent or sell in your area, or request one that you'd like to rent or buy.
                     </h4>
-                    <div class="form-div">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h2 class="form-head">Tell Us About Your Item</h2>
+                    <div className="form-div">
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h2 className="form-head">Tell Us About Your Item</h2>
                             </div>
                         </div>
-                        <div class="row">
+                        <div className="row">
 
-                            <div class="col-sm-6">
+                            <div className="col-sm-6">
 
                                 <form>
-                                    <div class="row">
-                                        <div class="col-sm-12">
+                                    <div className="row">
+                                        <div className="col-sm-12">
                                             Name of Item
                                             <Input
                                                 value={this.state.name}
@@ -82,9 +84,9 @@ class Post extends Component {
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <div className="row">
 
-                                        <div class="col-sm-4">
+                                        <div className="col-sm-4">
                                             Price
                                             <Input
                                                 value={this.state.price}
@@ -95,7 +97,7 @@ class Post extends Component {
                                             />
                                         </div>
 
-                                        <div class="col-sm-4">
+                                        <div className="col-sm-4">
                                             Type
                                             <Type
                                                 value={this.state.type}
@@ -104,7 +106,7 @@ class Post extends Component {
                                             />
                                         </div>
 
-                                        <div class="col-sm-4">
+                                        <div className="col-sm-4">
                                             Category
                                             <Category
                                                 value={this.state.category}
@@ -115,8 +117,8 @@ class Post extends Component {
 
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-sm-12">
+                                    <div className="row">
+                                        <div className="col-sm-12">
                                             Link to Image (not required)
                                             <Input
                                                 value={this.state.image}
@@ -128,8 +130,8 @@ class Post extends Component {
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-sm-12">
+                                    <div className="row">
+                                        <div className="col-sm-12">
                                             Description
                                             <TextArea
                                                 value={this.state.description}
@@ -147,7 +149,7 @@ class Post extends Component {
                             </div>
 
 
-                            <div class="col-sm-6">
+                            <div className="col-sm-6">
                                 <img src="https://i.pinimg.com/originals/c4/c2/65/c4c26502099258f61ee9662ea4cf427b.jpg" id="map"></img>
                             </div>
                         </div>

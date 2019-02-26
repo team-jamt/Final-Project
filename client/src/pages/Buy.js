@@ -3,6 +3,7 @@ import ItemCard from "../components/ItemCard";
 import Wrapper from "../components/Wrapper";
 import API from "../utils/API";
 import "../styles/Collection.css";
+import NavTabs from "../components/NavTabs";
 
 class Buy extends Component {
     state = {
@@ -24,6 +25,7 @@ class Buy extends Component {
     render() {
         return (
             <Wrapper>
+                <NavTabs />
                 <div className="collection-div" >
                     <h1>Buy an Item</h1>
                     <h4>
@@ -31,7 +33,7 @@ class Buy extends Component {
                     </h4>
                     <div className="collection-items-div">
                         <h2>Items for Sale</h2>
-                        <ul class="categories">
+                        <ul className="categories">
                             <li>All Items</li>
                             <li>Cleaning</li>
                             <li>Entertainment</li>
