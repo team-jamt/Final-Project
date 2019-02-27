@@ -21,7 +21,7 @@ class Home extends Component {
         <div className="home-div">
           <h1>Home</h1>
           <h4>Rent, buy, and sell items to others in your neighborhood.</h4>
-          <button onClick={this.logout}>Log Out</button>
+          <button className="logout" onClick={this.logout}>Log Out</button>
           <div className="home-buttons">
             <button type="button" className="home-button" id="button1">
               My Items for Rent
