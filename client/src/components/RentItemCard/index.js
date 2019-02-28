@@ -9,6 +9,7 @@ function RentItemCard(props) {
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">{props.description}</p>
+        <h5 className="card-title">Current Owner</h5>
         <p className="card-text">{props.owner}</p>
         <a href="https://www.apple.com" className="btn">
           More Info

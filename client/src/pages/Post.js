@@ -4,7 +4,7 @@ import { Input, TextArea, Type, Category } from "../components/PostForm";
 import API from "../utils/API";
 import Wrapper from "../components/Wrapper";
 import NavTabs from "../components/NavTabs";
-
+import Login from "./Login";
 class Post extends Component {
   state = {
     name: "",
@@ -14,11 +14,13 @@ class Post extends Component {
     type: "",
     category: "",
     rented: false,
-    owner: "tom"
+    owner: ""
   };
 
   componentDidMount() {
-    //go get the username
+    const owner = localStorage.username;
+    this.setState({ [owner]: owner });
+    console.log("Post file username: ", localStorage.username);
   }
 
   handleInputChange = event => {
@@ -49,7 +51,7 @@ class Post extends Component {
       image: this.state.image,
       description: this.state.description,
       rented: this.state.rented,
-      owner: this.state.owner
+      owner: localStorage.username
     })
       .then(res => console.log("Successfully Captured Item"))
       .catch(err => console.log(err));
