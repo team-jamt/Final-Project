@@ -73,7 +73,7 @@ class SignUp extends Component {
 
 
                         <div className="col-sm-6">
-                            <img src="https://i.pinimg.com/originals/c4/c2/65/c4c26502099258f61ee9662ea4cf427b.jpg" id="map"></img>
+                            <img src="https://i.pinimg.com/originals/c4/c2/65/c4c26502099258f61ee9662ea4cf427b.jpg" className="pic"></img>
                         </div>
                     </div>
 
