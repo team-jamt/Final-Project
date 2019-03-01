@@ -150,7 +150,7 @@ class Post extends Component {
 
 
                             <div className="col-sm-6">
-                                <img src="https://i.pinimg.com/originals/c4/c2/65/c4c26502099258f61ee9662ea4cf427b.jpg" id="map"></img>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/print/8.000/8.000/break/images-medium-5/carpenter-builder-hammer-cartoon-aloysius-patrimonio.jpg" className="pic"></img>
                             </div>
                         </div>
 
