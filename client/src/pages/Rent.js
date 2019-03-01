@@ -24,6 +24,7 @@ class Rent extends Component {
       .catch(err => console.log(err));
   };
   rentItem = itemInfo => {
+    const username = localStorage.username;
     console.log("item info: ", itemInfo);
     API.rentItem(itemInfo);
   };
