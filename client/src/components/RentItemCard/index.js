@@ -1,6 +1,6 @@
 import React from "react";
 
-function ItemCard(props) {
+function RentItemCard(props) {
   return (
     <div className="card">
       <div class="img-container">
@@ -9,19 +9,21 @@ function ItemCard(props) {
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">{props.description}</p>
+        <h5 className="card-title">Current Owner</h5>
+        <p className="card-text">{props.owner}</p>
         <a href="https://www.apple.com" className="btn">
           More Info
         </a>
         <a
           href="/home"
           className="btn"
-          onClick={() => props.buyButton(props.id)}
+          onClick={() => props.rentButton(props.id)}
         >
-          Purchase Item
+          Rent Item
         </a>
       </div>
     </div>
   );
 }
 
-export default ItemCard;
+export default RentItemCard;

@@ -18,17 +18,25 @@ export default {
   //   console.log("this the data", requestData);
   //   return axios.post("/api/requests", requestData);
   // },
-  postItem: function (postData) {
-    console.log("this is it: ", postData)
+  postItem: function(postData) {
+    console.log("this is it: ", postData);
     return axios.post("/api/items", postData);
   },
-  getRentalItems: function () {
-    return axios.get("/api/items/rentalitems")
+  getRentalItems: function() {
+    return axios.get("/api/items/rentalitems");
   },
-  getSaleItems: function () {
-    return axios.get("/api/items/saleitems")
+  getSaleItems: function() {
+    return axios.get("/api/items/saleitems");
   },
-  getRequestItems: function () {
-    return axios.get("/api/items/requestitems")
+  getRequestItems: function() {
+    return axios.get("/api/items/requestitems");
+  },
+  buyItem: function(id) {
+    // console.log("tom's id: ", id);
+    return axios.put("/api/items/saleitems/" + id);
+  },
+  rentItem: function(id) {
+    console.log("tom's id: ", id);
+    return axios.put("/api/items/rentalitems/" + id);
   }
 };
