@@ -69,6 +69,7 @@ class Post extends Component {
   render() {
     return (
       <Wrapper>
+        <NavTabs />
         <div class="post-item-div">
           <h1>Post an Item</h1>
           <h4>

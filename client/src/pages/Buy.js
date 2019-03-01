@@ -28,6 +28,7 @@ class Buy extends Component {
   render() {
     return (
       <Wrapper>
+        <NavTabs />
         <div className="collection-div">
           <h1>Buy an Item</h1>
           <h4>Browse our collection of items for sale in your area.</h4>
