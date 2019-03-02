@@ -3,7 +3,7 @@
 }
 
 .dashboard {
-    width: 75%;
+    width: 70%;
     margin: auto;
     margin-top: 4%;
     box-shadow:0 0 8px #605856;
@@ -12,14 +12,15 @@
 .home-buttons {
     display: flex;
     justify-content: space-around;
-    padding: 10px;
     background-color: white;
+    padding: 10px;
+    flex-flow: row wrap;
 }
 
 .home-button {
     height: 225px;
     width: 225px;
-    margin: 10px;
+    margin: 25px;
     box-shadow:0 0 8px #605856;
     font-size: 35px;
     color: white;
