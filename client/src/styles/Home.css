@@ -23,8 +23,6 @@
     box-shadow:0 0 8px #605856;
     font-size: 35px;
     color: white;
-    /* border-color: #50A3A4;
-    background-color: #50A3A4; */
     font-family: 'Questrial', sans-serif;
 }
 
@@ -33,22 +31,11 @@
     transform: scale(1.05)
 }
 
-.logout-btn {
-    width: 20%;
-    float: right;
-    border-color: #50A3A4;
-    background-color: #50A3A4;
+.homelink:hover {
     color: white;
-    height: 35px;
-    border-radius: 125px;
-    margin-right: 5%;
-    line-height: 2.1
+    text-decoration: none;
 }
 
-.logout-btn:hover {
-    cursor: pointer;
-    color: #9BC1BC;
-}
 
 #button1 {
     border-color: #FBAF37;

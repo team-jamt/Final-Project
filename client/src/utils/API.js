@@ -1,41 +1,42 @@
 import axios from "axios";
 
 export default {
-  // // Gets all books
-  // getRequests: function () {
-  //   return axios.get("/api/requests");
-  // },
-  // // Gets the book with the given id
-  // getRequest: function (id) {
-  //   return axios.get("/api/requests/" + id);
-  // },
-  // // Deletes the book with the given id
-  // deleteRequest: function (id) {
-  //   return axios.delete("/api/requests/" + id);
-  // },
-  // // Saves a book to the database
-  // saveRequest: function (requestData) {
-  //   console.log("this the data", requestData);
-  //   return axios.post("/api/requests", requestData);
-  // },
-  postItem: function(postData) {
+  postItem: function (postData) {
     console.log("this is it: ", postData);
     return axios.post("/api/items", postData);
   },
-  getRentalItems: function() {
+  getRentalItems: function () {
     return axios.get("/api/items/rentalitems");
   },
-  getSaleItems: function() {
+  getSaleItems: function () {
     return axios.get("/api/items/saleitems");
   },
-  getRequestItems: function() {
+  getRequestItems: function () {
     return axios.get("/api/items/requestitems");
   },
-  buyItem: function(id) {
+  getMyRentalItems: function (user) {
+    return axios.get("/api/items/myrentalitems/" + user);
+  },
+  getMySaleItems: function (user) {
+    return axios.get("/api/items/mysaleitems/" + user);
+  },
+  getMyRequests: function (user) {
+    return axios.get("/api/items/myrequests/" + user);
+  },
+  deleteRequest: function (id) {
+    return axios.delete("/api/items/requestitems/" + id);
+  },
+  deleteRentalItem: function (id) {
+    return axios.delete("/api/items/rentalitems/" + id);
+  },
+  deleteSaleItem: function (id) {
+    return axios.delete("/api/items/saleitems/" + id);
+  },
+  buyItem: function (id) {
     // console.log("tom's id: ", id);
     return axios.put("/api/items/saleitems/" + id);
   },
-  rentItem: function(id) {
+  rentItem: function (id) {
     console.log("tom's id: ", id);
     return axios.put("/api/items/rentalitems/" + id);
   }

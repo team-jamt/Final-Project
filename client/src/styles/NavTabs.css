@@ -8,7 +8,6 @@ ul {
 a {
     color: #F7f7f7;
     height: 100%;
-    padding-top: 15px;
 }
 
 a:hover {
@@ -17,4 +16,23 @@ a:hover {
 
 .nav-link:hover {
     border: 0px;
+}
+
+.logout-btn {
+    width: 10%;
+    float: right;
+    border-color: #50A3A4;
+    background-color: #50A3A4;
+    color: white;
+    height: 35px;
+    border-radius: 125px;
+    margin-top: .75%;
+    margin-left: 2%;
+    line-height: 2.1;
+    box-shadow: 0 0 3px #605856;
+}
+
+.logout-btn:hover {
+    cursor: pointer;
+    color: #9BC1BC;
 }

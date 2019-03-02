@@ -7,12 +7,13 @@
     width: 55%;
     box-shadow:0 0 8px #605856;
     padding-bottom: 1px;
+    background-color: white;
 }
 
 form {
     margin: 5% 0 5% 6%;
     color: #F75133;
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Questrial', sans-serif; 
 }
 
 #post-submit-btn {
@@ -24,6 +25,11 @@ form {
 }
 
 #map {
+    height: 100%;
+    width: 100%;
+}
+
+#man {
     height: 100%;
     width: 100%;
 }

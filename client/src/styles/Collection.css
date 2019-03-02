@@ -8,6 +8,7 @@
     box-shadow:0 0 8px #605856;
     font-family: 'Abril Fatface', cursive;
     padding-bottom: 10px;
+    background-color: white;
 }
 
 .categories {
@@ -22,10 +23,14 @@
     font-family: 'Questrial', sans-serif;
 }
 
+.each-card{
+    margin: 0.8%;
+}
+
 .item-card-div {
     height: 100%;
     display: flex;
-    padding: 0 5% 0 5%;
+    padding: 1% 2%;
     flex-flow: row wrap;
     align-content: flex-start;
     overflow: auto;
@@ -36,24 +41,23 @@
 }
 
 .img-container > img {
-    margin: 5%;
+    margin: 1%;
     max-width: 95%;
-    height: 95%
+    height: 250px;
   }
 
 .card {
     border-radius: 2px;
-    height: 450px;
-    margin: auto;
-    margin-bottom: 2%;
     position: relative;
     width: 250px;
     text-align: left;
     font-family: 'Questrial', sans-serif;
+    margin-bottom: 15px;
+    border-color: white;
 }
 
 .card:hover {
-    border-color: #FBAF37;
+    border-color: #C8D3D5;
 }
 
 .card-title {
@@ -64,20 +68,41 @@
 }
 
 .card-text {
-    color: #66483F;
-    max-height: 50px;
+    color: #605856;
+    max-height: 20px;
+    margin: 10px auto ;
+}
+
+.card-body {
+    max-height: 200px;
+}
+
+.line-2 {
+    margin-top: 25px;
     margin-bottom: 25px;
 }
 
 .btn {
+    color: white;
     background-color: #50A3A4;
     border-color: #50A3A4;
     height: 40px;
     padding-top: 7px;
     border-radius: 50px;
-    width: 100%
+    width: 100%;
+    box-shadow: 0 0 3px #605856;
+    font-family: 'Questrial', sans-serif;
 }
 
 .btn:hover {
     color: #9BC1BC;
+}
+
+.under-construction {
+    width: 85%;
+    margin: 3% auto;
+}
+
+.under-construction > img {
+    max-width: 100%
 }
