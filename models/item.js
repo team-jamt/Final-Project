@@ -24,7 +24,7 @@ const itemSchema = new Schema({
   },
   image: {
     type: String,
-    required: true
+    required: false
   },
   description: {
     type: String,
@@ -32,10 +32,14 @@ const itemSchema = new Schema({
   },
   rented: {
     type: Boolean,
-    required: true,
+    required: false,
     default: false
   },
   owner: {
+    type: String,
+    required: false
+  },
+  user: {
     type: String,
     required: true
   }

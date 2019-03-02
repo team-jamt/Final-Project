@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -9,7 +9,10 @@ import Request from "./pages/Request";
 import Login from "./pages/Login";
 import fire from "./config/Fire";
 import SignUp from "./pages/SignUp";
-
+import MyRentals from "./pages/MyRentals";
+import MySales from "./pages/MySales";
+import MyRequests from "./pages/MyRequests";
+import Messages from "./pages/Messages";
 
 class App extends Component {
 
@@ -50,6 +53,10 @@ class App extends Component {
             <Route path="/request" component={Request} />
             <Route path="/signup" component={SignUp} />
             <Route path="/login" component={Login} />
+            <Route path="/myrentals" component={MyRentals} />
+            <Route path="/mysales" component={MySales} />
+            <Route path="/myrequests" component={MyRequests} />
+            <Route path="/messages" component={Messages} />
           </Switch>
 
         </div>
@@ -58,6 +65,5 @@ class App extends Component {
   }
 }
 
-
-
 export default App;
+

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import RentItemCard from "../components/RentItemCard";
 import Wrapper from "../components/Wrapper";
-// import rentalItems from "../components/rentalItems.json";
 import API from "../utils/API";
 import "../styles/Collection.css";
 import NavTabs from "../components/NavTabs";
@@ -23,6 +22,7 @@ class Rent extends Component {
       )
       .catch(err => console.log(err));
   };
+
   rentItem = itemInfo => {
     const username = localStorage.username;
     console.log("item info: ", itemInfo);
@@ -38,7 +38,7 @@ class Rent extends Component {
           <h4>Browse our collection of items for rent in your area.</h4>
           <div className="collection-items-div">
             <h2>Items for Rent</h2>
-            <ul class="categories">
+            {/* <ul class="categories">
               <li>All Items</li>
               <li>Cleaning</li>
               <li>Entertainment</li>
@@ -47,7 +47,7 @@ class Rent extends Component {
               <li>Miscellaneous</li>
               <li>Tools</li>
               <li>Yard</li>
-            </ul>
+            </ul> */}
 
             <div className="item-card-div">
               {this.state.rentalItems.map(item => (
@@ -63,6 +63,9 @@ class Rent extends Component {
                 />
               ))}
             </div>
+          </div>
+          <div className="footer">
+            <img src="http://www.nutantravels.com/img/footer/footer.png" className="footer-img"></img>
           </div>
         </div>
       </Wrapper>

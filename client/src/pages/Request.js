@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import NavTabs from "../components/NavTabs";
 import Wrapper from "../components/Wrapper";
 import RequestCard from "../components/RequestCard"
 import "../styles/Request.css";
-import NavTabs from "../components/NavTabs";
 
 class Requests extends Component {
   state = {
@@ -42,10 +42,12 @@ class Requests extends Component {
                   type={item.type}
                   price={item.price}
                   category={item.category}
-                  image={item.image}
                 />
               ))}
             </div>
+          </div>
+          <div className="footer">
+            <img src="http://www.nutantravels.com/img/footer/footer.png" className="footer-img"></img>
           </div>
         </div>
       </Wrapper>

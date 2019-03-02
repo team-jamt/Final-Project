@@ -34,7 +34,7 @@ class Buy extends Component {
           <h4>Browse our collection of items for sale in your area.</h4>
           <div className="collection-items-div">
             <h2>Items for Sale</h2>
-            <ul class="categories">
+            {/* <ul class="categories">
               <li>All Items</li>
               <li>Cleaning</li>
               <li>Entertainment</li>
@@ -43,7 +43,7 @@ class Buy extends Component {
               <li>Miscellaneous</li>
               <li>Tools</li>
               <li>Yard</li>
-            </ul>
+            </ul> */}
 
             <div className="item-card-div">
               {this.state.saleItems.map(item => (
@@ -58,6 +58,9 @@ class Buy extends Component {
                 />
               ))}
             </div>
+          </div>
+          <div className="footer">
+            <img src="http://www.nutantravels.com/img/footer/footer.png" className="footer-img"></img>
           </div>
         </div>
       </Wrapper>

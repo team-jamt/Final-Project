@@ -2,25 +2,26 @@ import React from "react";
 
 function RentItemCard(props) {
   return (
-    <div className="card">
-      <div class="img-container">
-        <img alt={props.name} src={props.image} />
-      </div>
-      <div className="card-body">
-        <h5 className="card-title">{props.name}</h5>
-        <p className="card-text">{props.description}</p>
-        <h5 className="card-title">Current Owner</h5>
-        <p className="card-text">{props.owner}</p>
-        <a href="https://www.apple.com" className="btn">
-          More Info
+    <div className="each-card">
+      <div className="card">
+        <div class="img-container">
+          <img alt={props.name} src={props.image} />
+        </div>
+        <div className="card-body">
+          <h5 className="card-title">{props.name}</h5>
+          <p className="card-text">{props.description}</p>
+          <div className="line-2">
+            <span className="card-title line-2">Price:</span>
+            <span className="card-text">{props.price}</span>
+          </div>
+          <a
+            href="/home"
+            className="btn"
+            onClick={() => props.rentButton(props.id)}
+          >
+            Rent Item
         </a>
-        <a
-          href="/home"
-          className="btn"
-          onClick={() => props.rentButton(props.id)}
-        >
-          Rent Item
-        </a>
+        </div>
       </div>
     </div>
   );

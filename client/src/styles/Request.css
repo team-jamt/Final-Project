@@ -7,17 +7,18 @@
     width: 66%;
     height: 100%;
     box-shadow: 0 0 8px #605856;
+    background-color: white;
 }
 
 .request-card {
-    border: 1px solid #CFD2CD;
+    border: solid 1px white;
     height: 75px;
     margin: 1% 1%;
     padding: 1% 1%;
 }
 
 .request-card:hover {
-    border-color: #FBAF37;
+    border-color: #C8D3D5;
 }
 
 .request-title {
@@ -55,4 +56,8 @@
 .request-link:hover {
     text-decoration: none;
     color: #9BC1BC;
+}
+
+.delete-request {
+    margin-top: 2.75%;
 }

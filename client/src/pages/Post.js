@@ -4,7 +4,9 @@ import { Input, TextArea, Type, Category } from "../components/PostForm";
 import API from "../utils/API";
 import Wrapper from "../components/Wrapper";
 import NavTabs from "../components/NavTabs";
-import Login from "./Login";
+import fire from "../config/Fire";
+import Guy from "../styles/photos/Guy.png"
+
 class Post extends Component {
   state = {
     name: "",
@@ -14,13 +16,19 @@ class Post extends Component {
     type: "",
     category: "",
     rented: false,
-    owner: ""
+    owner: "",
+    user: "",
   };
 
   componentDidMount() {
     const owner = localStorage.username;
     this.setState({ [owner]: owner });
-    console.log("Post file username: ", localStorage.username);
+    fire.auth().onAuthStateChanged((user) => {
+      console.log(user.email);
+      this.setState({
+        user: user.email,
+      })
+    })
   }
 
   handleInputChange = event => {
@@ -51,7 +59,8 @@ class Post extends Component {
       image: this.state.image,
       description: this.state.description,
       rented: this.state.rented,
-      owner: localStorage.username
+      owner: localStorage.username,
+      user: this.state.user
     })
       .then(res => console.log("Successfully Captured Item"))
       .catch(err => console.log(err));
@@ -167,72 +176,14 @@ class Post extends Component {
 
               <div class="col-sm-6">
                 <img
-                  src="https://i.pinimg.com/originals/c4/c2/65/c4c26502099258f61ee9662ea4cf427b.jpg"
-                  id="map"
+                  src={Guy}
+                  id="man"
                 />
               </div>
             </div>
-            {/* <div class="col-sm-4">
-                      Type
-                      <Type
-                        value={this.state.type}
-                        name="type"
-                        onChange={this.handleInputChange}
-                      />
-                    </div>
-
-                    <div class="col-sm-4">
-                      Category
-                      <Category
-                        value={this.state.category}
-                        name="category"
-                        onChange={this.handleInputChange}
-                      />
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      Link to Image
-                      <Input
-                        value={this.state.image}
-                        name="image"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="https://www.example.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12">
-                      Description
-                      <TextArea
-                        value={this.state.description}
-                        name="description"
-                        onChange={this.handleInputChange}
-                        type="text"
-                        placeholder="Tell us about the item here"
-                      />
-                    </div>
-                  </div>
-
-                  <button
-                    id="post-submit-btn"
-                    className="btn"
-                    onClick={this.handleFormSubmit}
-                  >
-                    Post Item
-                  </button>
-                {/* </form> */}
-            {/* </div>
-
-              <div class="col-sm-6">
-                <img
-                  src="https://i.pinimg.com/originals/c4/c2/65/c4c26502099258f61ee9662ea4cf427b.jpg"
-                  id="map"
-                />
-              </div> */}
+          </div>
+          <div className="footer">
+            <img src="http://www.nutantravels.com/img/footer/footer.png" className="footer-img"></img>
           </div>
         </div>
       </Wrapper>
