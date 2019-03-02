@@ -8,6 +8,7 @@ h1 {
   margin-left: 100px;
   font-family: 'Abril Fatface', cursive;
   color: #F75133;
+  font-size: 40px;
 }
 
 h2 {
@@ -15,11 +16,13 @@ h2 {
   background-color: #FBAF37;
   font-family: 'Abril Fatface', cursive;
   padding: 10px 0 10px 20px;
+  font-size: 26px;
 }
 
 h4 {
   margin-left: 100px;
   color: #66483F;
+  font-size: 22px;
 }
 
 h5 {
