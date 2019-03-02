@@ -10,7 +10,7 @@ Rentilly is a community marketplace based app that allows users to post, buy, re
 
 ## How Does It Work?
 
-1. Go to www.rentilly.com (domain purchase in the works).
+1. Go to https://final-project-jamt.herokuapp.com/.
 2. Hit the sign up button to create your own account by adding your email and password.
 3. Once you've created your account you can login with your email and password.
 4. On your home page you will find four options: My Items For Rent, My Items For Sale, My Messages, My Requests.
