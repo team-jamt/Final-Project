@@ -64,9 +64,6 @@ class Rent extends Component {
               ))}
             </div>
           </div>
-          <div className="footer">
-            <img src="http://www.nutantravels.com/img/footer/footer.png" className="footer-img"></img>
-          </div>
         </div>
       </Wrapper>
     );
