@@ -1,29 +1,27 @@
-# Create React Express App
+# Rentilly
 
-## About This Boilerplate
+## Who Created It?
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+Tom Ocheltree, Matt Elwell, Adam Bindert, Jonas Davidow
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## What Is Rentilly?
 
-## Starting the app locally
+Rentilly is a community marketplace based app that allows users to post, buy, rent, and sell items for everyone in your local area. 
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## How Does It Work?
 
-```
-yarn install
-```
+1. Go to www.rentilly.com (domain purchase in the works).
+2. Hit the sign up button to create your own account by adding your email and password.
+3. Once you've created your account you can login with your email and password.
+4. On your home page you will find four options: My Items For Rent, My Items For Sale, My Messages, My Requests.
+	4a. In My Items For Rent you can view all of your personal items that are available for users to rent out at any time. 	4b. In My Items For Sale you can view all of your personal items you are ready to part with. Post an image for the item, set a sale cost, with a full detailed description of the item. 
+	4c. In My Messages you can view your correspondence with users who are renting or selling items. You can discuss the details of each item of interest and even negotiate a price point.
+	4d. In My Requests you can view a history of all the items a user has either purchased or rented for record keeping purposes. 
+5. The tabs near the header of the app allow a user to Post an Item, Rent an Item, Buy an Item, or view the most recent Item Requests. 5a. In Post and Item a user can post an image of your item for rent/sale, set a cost per hour or total sale, and put in a description of your item. 5b. In Rent an Item a user can view/search all possible items available for rent, read a full description of the item, and even message the owner for further details about the item. 5c. In Buy an Item a user can view/search all possible items available for sale, read a full description of the item, and even message the owner for further details about the item. 5d. In Item Requests a user can view all the current items that are in the middle of a transaction for rental or sale purposes.
 
-This should install node modules within the server and the client folder.
+## Technologies Used
 
-After both installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+1. React
+2. Bootstrap
+3. Firebase
+4. CSS
